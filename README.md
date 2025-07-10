@@ -29,7 +29,7 @@ JAVASCRIPT DEOBFUSCATOR 🩷
   ---
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=600&size=25&duration=4000&pause=1000&color=00F7FF&center=true&vCenter=true&width=500&lines=ULTIMATE+JAVASCRIPT+OBFUSCATOR;MULTI-FUNCTION+SUPPORT;POWERED+BY+BLACK-TAPPY;FAST++SECURE++RELIABLE" alt="Animated Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=600&size=25&duration=4000&pause=1000&color=00F7FF&center=true&vCenter=true&width=500&lines=UULTIMATE+JAVASCRIPT+OBFUSCATOR;MULTI-FUNCTION+SUPPORT;POWERED+BY+BLACK-TAPPY;FAST++SECURE++RELIABLE" alt="Animated Typing SVG" />
 </p>
 
 <div align="center">
@@ -39,12 +39,14 @@ JAVASCRIPT DEOBFUSCATOR 🩷
   <a href="https://github.com/Black-Tappy/XEON-XMD/"><img title="Size" src="https://img.shields.io/github/repo-size/Black-Tappy/XEON-XMD?style=for-the-badge&color=FFFF33&logo=docusign&logoColor=white"></a>
   <a href="https://github.com/Black-Tappy/XEON-XMD/graphs/commit-activity"><img height="28" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge&logo=gitpod&logoColor=white"></a>
 </div>
-
+<div align="center">
+  
+[![WhatsApp Channel](https://img.shields.io/badge/Join-WhatsApp%20Channel-FF00F8?style=big-square&logo=whatsapp)](https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10)
+</div>
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=JAVASCRIPT-AI&label=VISITORS&style=flat-square&color=0002FF" />
 </p>
 
-<
 <p align="center">
 <a href="https://github.com/Black-Tappy/Javascript-AI"><img title="PUBLIC-BOT" src="https://img.shields.io/static/v1?label=Language&message=English&style=square&color=darkpink"></a> &nbsp;
   <img src="https://komarev.com/ghpvc/?username=Javascript-Ai&label=VIEWS&style=square&color=blue" />
@@ -85,7 +87,3 @@ Click the button below to fork:
 If you face any issues, report them on GitHub or in the WhatsApp community.
 Happy coding! 👻 
 
-<div align="center">
-  
-[![WhatsApp Channel](https://img.shields.io/badge/Join-WhatsApp%20Channel-FF00F8?style=big-square&logo=whatsapp)](https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10)
-</div>
