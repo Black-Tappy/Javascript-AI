@@ -1,22 +1,6 @@
-### BLACK-TAPPY CODE OBFUSCATION
-
-Protect Your JavaScript Code with Cutting-Edge, Professional Obfuscation,👇
 
 
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
-
-
-<p align="center">
-<a href="https://crissvevo-obfuscation.vercel.app" target="_blank"><img title="DEPLOY-ON HEROKU" src="https://img.shields.io/badge/Encrypt%20Your-Code-FF004D?style=for-the-badge&logo=heroku&logoColor=white'/></a>  
-</p>
-
-
-
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
-
-
-
-<<<<<<<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=100&pause=1000&color=FF0000&center=true&width=1000&height=200&lines=Javascript-Deobfuscator" alt="Typing SVG" /></a>
+<<<<<<<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=100&pause=1000&color=FF0000&center=true&width=1000&height=200&lines=Javascript-Obfuscator" alt="Typing SVG" /></a>
   </p>
 +
 
@@ -108,7 +92,7 @@ Click the button below to fork:
 
 
 <p align="left">  
-<a href='https://crissvevo-obfuscation.vercel.app' target="_blank"><img alt='Deploy on Heroku' src='https://img.shields.io/badge/Deploy%20on-Heroku-FF004D?style=for-the-badge&logo=heroku&logoColor=white'/></a>  
+<a href='https://crissvevo-obfuscation.vercel.app' target="_blank"><img alt='Encrpt Your Codes' src='https://img.shields.io/badge/Deploy%20on-Heroku-FF004D?style=for-the-badge&logo=heroku&logoColor=white'/></a>  
 </p>
 
 
