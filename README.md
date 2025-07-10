@@ -7,8 +7,9 @@ Protect Your JavaScript Code with Cutting-Edge, Professional Obfuscation,👇
 
 
 <p align="center">
-<a href="https://crissvevo-obfuscation.vercel.app" target="_blank"><img title="DEPLOY-ON HEROKU" src="https://img.shields.io/badge/ENCRYPT%20YOUR-CODE%20HERE-white"" alt="Heroku" width="300"></a>
+<a href="https://crissvevo-obfuscation.vercel.app" target="_blank"><img title="DEPLOY-ON HEROKU" src="https://img.shields.io/badge/Encrypt%20Your-Code-FF004D?style=for-the-badge&logo=heroku&logoColor=white'/></a>  
 </p>
+
 
 
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
