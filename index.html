@@ -389,195 +389,201 @@
     </p>
   </footer>
   <script>
-    // This script block contains the JavaScript logic for the obfuscator.
-    // It was originally in 'script.js' and is included here for completeness.
+    // Self-defending mechanism to detect tampering, common in obfuscated code.
+    const oneTimeFunctionExecutor = function () {
+      let isFirstCall = true; // Flag to ensure the inner function is executed only once.
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const inputCode = document.getElementById('inputCode');
-      const outputCode = document.getElementById('outputCode');
-      const securitySlider = document.getElementById('securitySlider');
-      const levelValue = document.getElementById('levelValue');
-      const obfuscateBtn = document.getElementById('obfuscateBtn');
-      const copyBtn = document.getElementById('copyBtn');
-      const downloadBtn = document.getElementById('downloadBtn');
-      const levelDots = document.querySelectorAll('.level-desc .dot');
+      // This returned function will be called with a context (this) and a function to execute.
+      return function (context, funcToExecute) {
+        // The executorFunction is defined based on whether it's the first call.
+        const executorFunction = isFirstCall ? function () {
+          // If funcToExecute exists (i.e., not nullified yet)
+          if (funcToExecute) {
+            // Apply the funcToExecute with the given context and arguments.
+            const result = funcToExecute.apply(context, arguments);
+            funcToExecute = null; // Nullify the function to prevent re-execution.
+            return result; // Return the result of the executed function.
+          }
+        } : function () {}; // After the first call, it becomes a no-op function.
 
-      // Function to update security level display
-      const updateSecurityLevel = () => {
-        const level = parseInt(securitySlider.value);
-        let text = '';
-        // Reset all dots
-        levelDots.forEach(dot => dot.classList.remove('active'));
-
-        switch (level) {
-          case 1:
-            text = 'BASIC';
-            levelDots[0].classList.add('active');
-            break;
-          case 2:
-            text = 'MEDIUM';
-            levelDots[1].classList.add('active');
-            break;
-          case 3:
-            text = 'ADVANCED';
-            levelDots[2].classList.add('active');
-            break;
-        }
-        levelValue.textContent = text;
+        isFirstCall = false; // Set the flag to false after the first call.
+        return executorFunction; // Return the actual function that will perform the execution.
       };
+    }();
 
-      // Initial update
-      updateSecurityLevel();
-
-      // Event listener for slider change
-      securitySlider.addEventListener('input', updateSecurityLevel);
-
-      // Obfuscation logic
-      obfuscateBtn.addEventListener('click', () => {
-        const code = inputCode.value;
-        if (!code.trim()) {
-          outputCode.value = 'Please enter some JavaScript code to obfuscate.';
-          return;
-        }
-
-        const level = parseInt(securitySlider.value);
-        let options = {};
-
-        switch (level) {
-          case 1: // Basic
-            options = {
-              compact: true,
-              controlFlowFlattening: false,
-              deadCodeInjection: false,
-              debugProtection: false,
-              disableConsoleOutput: false,
-              identifierNamesGenerator: 'hexadecimal',
-              log: false,
-              renameGlobals: false,
-              selfDefending: false,
-              simplify: true,
-              splitStrings: false,
-              stringArray: false,
-              stringArrayEncoding: [],
-              stringArrayIndexShift: false,
-              stringArrayRotate: false,
-              stringArrayShuffle: false,
-              stringArrayWrappersCount: 0,
-              stringArrayWrappersChainedCalls: 0,
-              stringArrayWrappersParametersMaxCount: 0,
-              stringArrayWrappersType: 'variable',
-              transformStrings: false,
-              unicodeEscapeSequence: false,
-            };
-            break;
-          case 2: // Medium
-            options = {
-              compact: true,
-              controlFlowFlattening: true,
-              controlFlowFlatteningThreshold: 0.75,
-              deadCodeInjection: true,
-              deadCodeInjectionThreshold: 0.4,
-              debugProtection: true,
-              debugProtectionInterval: 4000,
-              disableConsoleOutput: true,
-              identifierNamesGenerator: 'hexadecimal',
-              log: false,
-              renameGlobals: false,
-              selfDefending: true,
-              simplify: true,
-              splitStrings: true,
-              stringArray: true,
-              stringArrayEncoding: ['base64'],
-              stringArrayIndexShift: true,
-              stringArrayRotate: true,
-              stringArrayShuffle: true,
-              stringArrayWrappersCount: 1,
-              stringArrayWrappersChainedCalls: 0.5,
-              stringArrayWrappersParametersMaxCount: 2,
-              stringArrayWrappersType: 'variable',
-              transformStrings: true,
-              unicodeEscapeSequence: false,
-            };
-            break;
-          case 3: // Advanced
-            options = {
-              compact: true,
-              controlFlowFlattening: true,
-              controlFlowFlatteningThreshold: 1,
-              deadCodeInjection: true,
-              deadCodeInjectionThreshold: 1,
-              debugProtection: true,
-              debugProtectionInterval: 4000,
-              disableConsoleOutput: true,
-              identifierNamesGenerator: 'mangled',
-              log: false,
-              renameGlobals: true, // More aggressive
-              selfDefending: true,
-              simplify: true,
-              splitStrings: true,
-              stringArray: true,
-              stringArrayEncoding: ['base64', 'rc4'], // More encodings
-              stringArrayIndexShift: true,
-              stringArrayRotate: true,
-              stringArrayShuffle: true,
-              stringArrayWrappersCount: 5, // More wrappers
-              stringArrayWrappersChainedCalls: 1,
-              stringArrayWrappersParametersMaxCount: 4,
-              stringArrayWrappersType: 'function', // Function wrappers
-              transformStrings: true,
-              unicodeEscapeSequence: true, // Unicode escape
-              // Add more advanced options if available in the library
-              // e.g., domainLock: ['your-domain.com'],
-              // sourceMap: true,
-            };
-            break;
-        }
-
-        try {
-          const obfuscatedCode = JavaScriptObfuscator.obfuscate(code, options).getObfuscatedCode();
-          outputCode.value = obfuscatedCode;
-        } catch (error) {
-          outputCode.value = `Error during obfuscation: ${error.message}`;
-          console.error("Obfuscation error:", error);
-        }
-      });
-
-      // Copy to clipboard logic
-      copyBtn.addEventListener('click', () => {
-        if (outputCode.value) {
-          outputCode.select();
-          outputCode.setSelectionRange(0, 99999); // For mobile devices
-          document.execCommand('copy');
-          alert('Code copied to clipboard!');
-        } else {
-          alert('No code to copy!');
-        }
-      });
-
-      // Download file logic
-      downloadBtn.addEventListener('click', () => {
-        if (outputCode.value) {
-          const filename = 'obfuscated_code.js';
-          const blob = new Blob([outputCode.value], { type: 'text/javascript' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = filename;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-        } else {
-          alert('No code to download!');
-        }
-      });
+    // selfDefendingCheck is assigned the result of calling oneTimeFunctionExecutor.
+    // The function passed to it contains a 'catastrophic backtracking' regex.
+    // This is a common technique used by obfuscators to detect if the code's toString()
+    // representation has been altered, which often happens during deobfuscation attempts.
+    const selfDefendingCheck = oneTimeFunctionExecutor(this, function () {
+      // This line attempts to trigger a catastrophic backtracking regex if the toString()
+      // method of functions has been modified, which is a sign of tampering.
+      // The specific regex "(((.+)+)+)+$" is known for this behavior.
+      return selfDefendingCheck.toString().search("(((.+)+)+)+$").toString().constructor(selfDefendingCheck).search("(((.+)+)+)+$");
     });
-    
+
+    // Execute the self-defending check. If tampering is detected, this might cause
+    // a runtime error or unexpected behavior, preventing further execution or analysis.
+    selfDefendingCheck();
+
+    // Get references to the HTML elements
+    const securitySlider = document.getElementById("securitySlider");
+    const levelValue = document.getElementById("levelValue");
+    const inputCode = document.getElementById("inputCode");
+    const outputCode = document.getElementById("outputCode");
+    const obfuscateBtn = document.getElementById("obfuscateBtn");
+    const copyBtn = document.getElementById("copyBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
+    const dots = document.querySelectorAll(".level-desc .dot"); // Corrected selector for dots
+
+    // Define basic obfuscation options
+    const basicObfuscationOptions = {
+      compact: true,
+      controlFlowFlattening: false, // Disabled for basic
+      deadCodeInjection: false, // Disabled for basic
+      stringArray: false, // Disabled for basic
+      numbersToExpressions: false // Disabled for basic
+    };
+
+    // Configuration for the BASIC obfuscation level
+    const basicLevelConfig = {
+      label: "BASIC",
+      options: basicObfuscationOptions
+    };
+
+    // Define medium obfuscation options
+    const mediumObfuscationOptions = {
+      compact: true,
+      controlFlowFlattening: true, // Enabled for medium
+      controlFlowFlatteningThreshold: 0.5, // 50% of control flow will be flattened
+      deadCodeInjection: true, // Enabled for medium
+      deadCodeInjectionThreshold: 0.2, // 20% of dead code will be injected
+      stringArray: true, // Enabled for medium
+      stringArrayThreshold: 0.7, // 70% of strings will be moved to string array
+      numbersToExpressions: true, // Enabled for medium
+      splitStrings: false // Disabled for medium
+    };
+
+    // Configuration for the MEDIUM obfuscation level
+    const mediumLevelConfig = {
+      label: "MEDIUM",
+      options: mediumObfuscationOptions
+    };
+
+    // Define advanced obfuscation options
+    const advancedObfuscationOptions = {
+      compact: true,
+      controlFlowFlattening: true, // Enabled for advanced
+      controlFlowFlatteningThreshold: 0x1, // 100% of control flow will be flattened
+      deadCodeInjection: true, // Enabled for advanced
+      deadCodeInjectionThreshold: 0x1, // 100% of dead code will be injected
+      stringArray: true, // Enabled for advanced
+      stringArrayThreshold: 0x1, // 100% of strings will be moved to string array
+      splitStrings: true, // Enabled for advanced
+      splitStringsChunkLength: 0x4, // Strings split into chunks of 4 characters
+      numbersToExpressions: true, // Enabled for advanced
+      simplify: true, // Enabled for advanced (simplifies expressions)
+      rotateStringArray: true, // Enabled for advanced (rotates string array)
+      selfDefending: true, // Enabled for advanced (adds anti-tampering)
+      transformObjectKeys: true // Enabled for advanced (transforms object keys)
+    };
+
+    // Configuration for the ADVANCED obfuscation level
+    const advancedLevelConfig = {
+      label: "ADVANCED",
+      options: advancedObfuscationOptions
+    };
+
+    // Map slider values (1, 2, 3) to their respective obfuscation configurations
+    const obfuscationLevelsMap = {
+      '1': basicLevelConfig,
+      '2': mediumLevelConfig,
+      '3': advancedLevelConfig
+    };
+
+    // Function to update security level display and dots
+    const updateSecurityLevelDisplay = () => {
+      const sliderValueInt = parseInt(securitySlider.value, 10);
+      levelValue.textContent = obfuscationLevelsMap[sliderValueInt].label;
+
+      dots.forEach((dotElement, dotIndex) => {
+        dotElement.classList.toggle("active", dotIndex === sliderValueInt - 1);
+      });
+    };
+
+    // Initial update of the security level display
+    updateSecurityLevelDisplay();
+
+    // Event listener for the security slider input
+    securitySlider.addEventListener("input", updateSecurityLevelDisplay);
+
+    // Event listener for the Obfuscate button click
+    obfuscateBtn.addEventListener("click", () => {
+      const inputCodeValue = inputCode.value; // Get the code from the input textarea
+
+      // If input code is empty or just whitespace, display a message
+      if (!inputCodeValue.trim()) {
+        outputCode.value = "// Tafadhali andika JavaScript code kwanza (Black-Tappy)"; // Message in Swahili
+        return;
+      }
+
+      try {
+        // Get the selected obfuscation options based on the slider value
+        const selectedOptions = obfuscationLevelsMap[securitySlider.value].options;
+
+        // Obfuscate the code using the JavaScriptObfuscator library
+        // window.JavaScriptObfuscator is expected to be globally available (loaded from a script tag)
+        const obfuscatedCodeResult = window.JavaScriptObfuscator.obfuscate(inputCodeValue, selectedOptions);
+
+        // Display the obfuscated code in the output textarea
+        outputCode.value = "// Obfuscated by Black-Tappy [" + obfuscationLevelsMap[securitySlider.value].label + "]\n" + obfuscatedCodeResult.getObfuscatedCode();
+      } catch (error) {
+        // If an error occurs during obfuscation, display the error message
+        outputCode.value = "// Error: " + error.message;
+        console.error("Obfuscation error:", error);
+      }
+    });
+
+    // Event listener for the Copy button click
+    copyBtn.addEventListener("click", () => {
+      if (outputCode.value) {
+        outputCode.select(); // Select all text in the output textarea
+        document.execCommand("copy"); // Copy the selected text to clipboard
+        alert('Code copied to clipboard!');
+      } else {
+        alert('No code to copy!');
+      }
+    });
+
+    // Event listener for the Download button click
+    downloadBtn.addEventListener("click", () => {
+      if (outputCode.value) {
+        const filename = 'obfuscated_code.js';
+        const blobOptions = {
+          type: "text/javascript"
+        }; // Define blob type as JavaScript
+
+        // Create a Blob containing the obfuscated code
+        const codeBlob = new Blob([outputCode.value], blobOptions);
+        const url = URL.createObjectURL(codeBlob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      } else {
+        alert('No code to download!');
+      }
+    });
+
+    // Audio autoplay workaround: Play audio only after user interaction
     document.addEventListener('click', function () {
-    const audio = document.getElementById('myAudio');
-    audio.muted = false;
-    audio.play();
-  }, { once: true });
+      const audio = document.getElementById('myAudio');
+      audio.muted = false;
+      audio.play();
+    }, { once: true });
   </script>
 </body>
 </html>
