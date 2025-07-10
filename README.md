@@ -25,27 +25,11 @@ JAVASCRIPT DEOBFUSCATOR 🩷
 
 ---
 
-<p align="center">
-  <a href="https://github.com/Black-Tappy "><img title="Developer" src="https://img.shields.io/badge/Author-Black%20Tappy-FF7604.svg?style=big-square&logo=github" /></a>
-</p>
-
-<div align="center">
-  
-[![WhatsApp Channel](https://img.shields.io/badge/Join-WhatsApp%20Channel-FF00F8?style=big-square&logo=whatsapp)](https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10)
-</div>
-
- <p align="center"><img src="https://profile-counter.glitch.me/{XEON-XMD}/count.svg" alt="Black-Tappy :: Visitor's Count" old_src="https://profile-counter.glitch.me/{Black-Tappy}/count.svg" /></p>
-
-
-<div align="center">
-  
-[![WhatsApp Channel](https://img.shields.io/badge/Join-WhatsApp%20Channel-FF00F8?style=big-square&logo=whatsapp)](https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10)
-</div>
 
   ---
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=600&size=25&duration=4000&pause=1000&color=00F7FF&center=true&vCenter=true&width=500&lines=ULTIMATE+WHATSAPP+BOT;MULTI-DEVICE+SUPPORT;POWERED+BY+BAILEYS;FAST++SECURE++RELIABLE" alt="Animated Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=600&size=25&duration=4000&pause=1000&color=00F7FF&center=true&vCenter=true&width=500&lines=ULTIMATE+JAVASCRIPT+OBFUSCATOR;MULTI-FUNCTION+SUPPORT;POWERED+BY+BLACK-TAPPY;FAST++SECURE++RELIABLE" alt="Animated Typing SVG" />
 </p>
 
 <div align="center">
@@ -57,19 +41,13 @@ JAVASCRIPT DEOBFUSCATOR 🩷
 </div>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=XEON-XTECH&label=VISITORS&style=flat-square&color=0002FF" />
+  <img src="https://komarev.com/ghpvc/?username=JAVASCRIPT-AI&label=VISITORS&style=flat-square&color=0002FF" />
 </p>
 
+<
 <p align="center">
-<a href="https://github.com/Black-Tappy/XEON-XMD"><img title="PUBLIC-BOT" src="https://img.shields.io/static/v1?label=Language&message=English&style=square&color=darkpink"></a> &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=XEON-XMD&label=VIEWS&style=square&color=blue" />
-</p>
-</p> 
-
-
-<p align="center">
-<a href="https://github.com/Black-Tappy/XEOM-XMD"><img title="PUBLIC-BOT" src="https://img.shields.io/static/v1?label=Language&message=English&style=square&color=darkpink"></a> &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=XEON-XMD&label=VIEWS&style=square&color=blue" />
+<a href="https://github.com/Black-Tappy/Javascript-AI"><img title="PUBLIC-BOT" src="https://img.shields.io/static/v1?label=Language&message=English&style=square&color=darkpink"></a> &nbsp;
+  <img src="https://komarev.com/ghpvc/?username=Javascript-Ai&label=VIEWS&style=square&color=blue" />
 </p>
 </p> 
 
@@ -77,17 +55,11 @@ JAVASCRIPT DEOBFUSCATOR 🩷
 
 Click the button below to fork:
 
-  <a href="https://github.com/Black-Tappy/XEON-XMD/fork"><img title="XEON-XMD" src="https://img.shields.io/badge/FORK-XEON XMD-h?color=green&style=for-the-badge&logo=stackshare"></a>
+  <a href="https://github.com/Black-Tappy/Javascript-AI/fork"><img title="Javascript-AI" src="https://img.shields.io/badge/FORK-JAVASCRIPT AI-h?color=green&style=for-the-badge&logo=stackshare"></a>
 
-## ɢᴇᴛ ᴘᴀɪʀɪɴɢ ᴄᴏᴅᴇ
-  <p align="left">  
-<a href='https://xeon-xtech-pair-case.onrender.com/pair' target="_blank"><img alt='Get Pairing Code' src='https://img.shields.io/badge/Get%20Pairing%20Code-000000?style=for-the-badge&logo=codefactor&logoColor=yellow'/></a>  
-</p>  
+## 👻 Obfuscate Javascript Codes 👻
 
-
-## 👻 ᴅᴇᴘʟᴏʏ xᴇᴏɴ xᴍᴅ 👻
-
-> Deploy on Heroku
+> Obfuscate Javascript on Javascript-AI 
 
 
 
@@ -112,3 +84,8 @@ Click the button below to fork:
 
 If you face any issues, report them on GitHub or in the WhatsApp community.
 Happy coding! 👻 
+
+<div align="center">
+  
+[![WhatsApp Channel](https://img.shields.io/badge/Join-WhatsApp%20Channel-FF00F8?style=big-square&logo=whatsapp)](https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10)
+</div>
